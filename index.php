@@ -7,7 +7,7 @@
     <?php endif; ?>
     <h1 id="main-title"> Cliníca de Pets</h1>
     <?php if(count($contacts) > 0): ?>
-      <table class="table" id="contacts-table">
+      <table class="cliníca" id="cliníca-table">
         <thead>
           <tr>
             <th scope="col">Numéro de chamada</th>

@@ -13,16 +13,19 @@
     // Criar contato
     if($data["type"] === "create") {
 
-      $name = $data["name"];
-      $phone = $data["phone"];
+      $callnumber = $data["callnumber"];
+      $race = $data["race"];
+      $ownersphone =$data["ownersphone"];
       $observations = $data["observations"];
+      
 
-      $query = "INSERT INTO contacts (name, phone, observations) VALUES (:name, :phone, :observations)";
+      $query = "INSERT INTO cliníca (call number, race, owners phone ,observations) VALUES (:call number, :race: :owners phone, :observations)";
 
       $stmt = $conn->prepare($query);
 
-      $stmt->bindParam(":name", $name);
-      $stmt->bindParam(":phone", $phone);
+      $stmt->bindParam(":name", $callnumber);
+      $stmt->bindParam(":phone", $race);
+      $stmt->bindParam(":owners phone", $ownersphone);
       $stmt->bindParam(":observations", $observations);
 
       try {
@@ -38,19 +41,19 @@
 
     } else if($data["type"] === "edit") {
 
-      $name = $data["name"];
-      $phone = $data["phone"];
+      $callnumber = $data["callnumber"];
+      $race = $data["race"];
       $observations = $data["observations"];
       $id = $data["id"];
 
-      $query = "UPDATE contacts 
+      $query = "UPDATE cliníca 
                 SET name = :name, phone = :phone, observations = :observations 
                 WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
-      $stmt->bindParam(":name", $name);
-      $stmt->bindParam(":phone", $phone);
+      $stmt->bindParam(":call number", $name);
+      $stmt->bindParam(":race", $phone);
       $stmt->bindParam(":observations", $observations);
       $stmt->bindParam(":id", $id);
 
@@ -69,7 +72,7 @@
 
       $id = $data["id"];
 
-      $query = "DELETE FROM contacts WHERE id = :id";
+      $query = "DELETE FROM cliníca WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -103,7 +106,7 @@
     // Retorna o dado de um contato
     if(!empty($id)) {
 
-      $query = "SELECT * FROM contacts WHERE id = :id";
+      $query = "SELECT * FROM cliníca WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -118,7 +121,7 @@
       // Retorna todos os contatos
       $contacts = [];
 
-      $query = "SELECT * FROM contacts";
+      $query = "SELECT * FROM clinica";
 
       $stmt = $conn->prepare($query);
 

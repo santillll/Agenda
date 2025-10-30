@@ -26,10 +26,10 @@ CREATE DATABASE Cliníca;
 -- --------------------------------------------------------
 USE Cliníca;
 --
--- Estrutura da tabela `contacts`
+-- Estrutura da tabela `cliníca`
 --
 
-CREATE TABLE `contacts` (
+CREATE TABLE `cliníca` (
   `call number` int(11) NOT NULL,
   `race` varchar(255) DEFAULT NULL,
   `owner's phone` varchar(20) DEFAULT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `contacts`
+-- Extraindo dados da tabela `cliníca`
 --
 
-INSERT INTO `contacts` (`call number`, `race`, `owner's phone`, `observations`) VALUES
+INSERT INTO `cliníca` (`call number`, `race`, `owner's phone`, `observations`) VALUES
 (1, 'Pastor Alemão', '(11)9999-8888', 'Protetor'),
 (2, 'Husky Siberiano', '(11)9999-4698', 'Gelo'),
 (3, 'Golden Retriever', '(11) 9945-3468', 'Celebridade'),
@@ -52,9 +52,9 @@ INSERT INTO `contacts` (`call number`, `race`, `owner's phone`, `observations`) 
 --
 
 --
--- Índices para tabela `contacts`
+-- Índices para tabela `cliníca`
 --
-ALTER TABLE `contacts`
+ALTER TABLE `cliníca`
   ADD PRIMARY KEY (`call number`);
 
 --
@@ -62,9 +62,9 @@ ALTER TABLE `contacts`
 --
 
 --
--- AUTO_INCREMENT de tabela `contacts`
+-- AUTO_INCREMENT de tabela `cliníca`
 --
-ALTER TABLE `contacts`
+ALTER TABLE `cliníca`
   MODIFY `call number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
